@@ -1,91 +1,65 @@
-import { useState } from 'react'
 import { tools, workflows } from './data'
 import ToolCard from './ToolCard'
 import WorkflowBanner from './WorkflowBanner'
 
-const FILTERS = ['All tools', 'Workflow 1', 'Workflow 2', 'Not in workflow']
+const LANES = [
+  { id: 'ai',      label: 'AI & coding',             color: '#3a3a3c', stripe: '#afa9ec', ids: ['claude', 'cursor'] },
+  { id: 'design',  label: 'Design & prototyping',     color: '#3a3a3c', stripe: '#ed93b1', ids: ['figma', 'replit'] },
+  { id: 'deploy',  label: 'Deploy & version control', color: '#3a3a3c', stripe: '#97c459', ids: ['github', 'vercel'] },
+  { id: 'backend', label: 'Backend & data',           color: '#3a3a3c', stripe: '#5dcaa5', ids: ['supabase'] },
+]
 
 export default function App() {
-  const [filter, setFilter] = useState('All tools')
-
-  const filtered = tools.filter(t => {
-    if (filter === 'All tools') return true
-    if (filter === 'Workflow 1') return t.workflow === 1
-    if (filter === 'Workflow 2') return t.workflow === 2
-    if (filter === 'Not in workflow') return !t.workflow
-    return true
-  })
-
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-      {/* Header */}
       <header style={{
-        background: 'rgba(255,255,255,0.85)',
-        backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid var(--border)',
-        position: 'sticky', top: 0, zIndex: 10,
-        padding: '0 24px',
+        background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 10, padding: '0 24px',
       }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-            <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>
-              Vibe Coding Dashboard
-            </span>
+            <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
             <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>Tool comparison & workflows</span>
           </div>
-          <div style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--mono)' }}>
-            {tools.length} tools
-          </div>
+          <div style={{ fontSize: 12, color: 'var(--text-tertiary)', fontFamily: 'var(--mono)' }}>{tools.length} tools</div>
         </div>
       </header>
 
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '28px 24px 60px' }}>
-
-        {/* Workflows */}
-        <div style={{ marginBottom: 8 }}>
-          <SectionHeading>My workflows</SectionHeading>
-        </div>
-        {workflows.map(wf => <WorkflowBanner key={wf.id} workflow={wf} />)}
-
-        {/* Filter pills */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, margin: '28px 0 16px' }}>
-          <SectionHeading>Tools</SectionHeading>
-          <div style={{ flex: 1 }} />
-          <div style={{ display: 'flex', gap: 6 }}>
-            {FILTERS.map(f => (
-              <button
-                key={f}
-                onClick={() => setFilter(f)}
-                style={{
-                  fontSize: 12,
-                  fontWeight: 500,
-                  fontFamily: 'var(--font)',
-                  padding: '5px 12px',
-                  borderRadius: 20,
-                  border: `1px solid ${filter === f ? 'var(--apple-blue)' : 'var(--border)'}`,
-                  background: filter === f ? 'var(--apple-blue)' : 'var(--surface)',
-                  color: filter === f ? 'white' : 'var(--text-secondary)',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s',
-                }}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+        <SectionHeading>My workflows</SectionHeading>
+        <div style={{ marginTop: 12, marginBottom: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+          {workflows.map(wf => <WorkflowBanner key={wf.id} workflow={wf} />)}
         </div>
 
-        {/* Cards grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 16,
-        }}>
-          {filtered.map(tool => <ToolCard key={tool.id} tool={tool} />)}
+        <SectionHeading>Tools</SectionHeading>
+        <div style={{ marginTop: 16 }}>
+          {LANES.map(lane => {
+            const laneTools = lane.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
+            const single = laneTools.length === 1
+            return (
+              <div key={lane.id} className="lane">
+                <div className="lane-header">
+                  <span className="lane-label" style={{ color: lane.color }}>{lane.label}</span>
+                  <div className="lane-stripe" style={{ background: lane.stripe }} />
+                </div>
+                {/* Single-tool lanes use a plain block so the card stretches full width */}
+                {single ? (
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+                    <div style={{ gridColumn: '1 / -1' }}>
+                      <ToolCard tool={laneTools[0]} />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="lane-row">
+                    {laneTools.map(tool => <ToolCard key={tool.id} tool={tool} />)}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
 
-        {/* Footer */}
-        <div style={{ marginTop: 48, textAlign: 'center', fontSize: 12, color: 'var(--text-tertiary)' }}>
+        <div style={{ marginTop: 40, textAlign: 'center', fontSize: 12, color: 'var(--text-tertiary)' }}>
           Last updated March 2026 · Built with React + Vite + Vercel
         </div>
       </main>
@@ -94,9 +68,5 @@ export default function App() {
 }
 
 function SectionHeading({ children }) {
-  return (
-    <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-      {children}
-    </div>
-  )
+  return <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{children}</div>
 }

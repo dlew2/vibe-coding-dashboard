@@ -217,6 +217,7 @@ export const workflows = [
     label: 'Workflow 1 — current stack',
     subtitle: 'AI Updates dashboard · local dev · GitHub deploy',
     color: '#007aff',
+    project: 'AI Updates dashboard (ai-updates-ten.vercel.app) — React/Vite app with on-demand RSS summarization, Apple-inspired design, mobile responsive.',
     steps: [
       { name: 'Claude.ai', role: 'Ideate & generate', iconBg: '#f0f4ff', icon: 'claude' },
       { name: 'Claude Code', role: 'Edit & build locally', iconBg: '#f0f4ff', icon: 'claudecode' },
@@ -229,6 +230,7 @@ export const workflows = [
     label: 'Workflow 2 — Figma Make + Supabase',
     subtitle: 'Guitar Practice Tracker · browser-based · cloud backend',
     color: '#ff2d55',
+    project: 'Guitar Practice Tracker — React + Tailwind, Apple-inspired design, 34 features including metronome, chord finder, recorder, and spaced repetition.',
     steps: [
       { name: 'Figma Make', role: 'Design & build UI', iconBg: '#fff0f3', icon: 'figma' },
       { name: 'React + Tailwind', role: 'Generated code', iconBg: '#e8faf4', icon: 'react' },
