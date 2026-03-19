@@ -3,10 +3,11 @@ import ToolCard from './ToolCard'
 import WorkflowBanner from './WorkflowBanner'
 
 const LANES = [
-  { id: 'ai',      label: 'AI & coding',             color: '#3a3a3c', stripe: '#afa9ec', ids: ['claude', 'cursor', 'geminicli'] },
-  { id: 'design',  label: 'Design & prototyping',     color: '#3a3a3c', stripe: '#ed93b1', ids: ['figma', 'replit', 'stitch'] },
-  { id: 'deploy',  label: 'Deploy & version control', color: '#3a3a3c', stripe: '#97c459', ids: ['github', 'vercel'] },
-  { id: 'backend', label: 'Backend & data',           color: '#3a3a3c', stripe: '#5dcaa5', ids: ['supabase'] },
+  { id: 'ai',           label: 'AI & coding',              color: '#3a3a3c', stripe: '#afa9ec', ids: ['claude', 'cursor', 'geminicli'] },
+  { id: 'design',       label: 'Design & prototyping',      color: '#3a3a3c', stripe: '#ed93b1', ids: ['figma', 'replit', 'stitch'] },
+  { id: 'deploy',       label: 'Deploy & version control',  color: '#3a3a3c', stripe: '#97c459', ids: ['github', 'vercel'] },
+  { id: 'productivity', label: 'Research & productivity',   color: '#3a3a3c', stripe: '#fac775', ids: ['notebooklm', 'cowork'] },
+  { id: 'backend',      label: 'Backend & data',            color: '#3a3a3c', stripe: '#5dcaa5', ids: ['supabase', 'firebase', 'appwrite'] },
 ]
 
 export default function App() {
