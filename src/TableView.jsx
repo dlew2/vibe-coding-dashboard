@@ -199,11 +199,11 @@ export default function TableView({ lanes, tools }) {
                       </div>
                     </div>
                   </td>
-                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f' }}>{TYPES[tool.id] || '—'}</td>
-                  <td style={{ padding: '11px 14px' }}>
+                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{TYPES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                     <span style={{ fontSize: 11, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: pl.free ? '#e8faf4' : '#f1efe8', color: pl.free ? '#0a6b4a' : '#444441', whiteSpace: 'nowrap' }}>{pl.label}</span>
                   </td>
-                  <td style={{ padding: '11px 14px' }}>
+                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                     {diff ? (
                       <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: diff.color, flexShrink: 0 }} />
@@ -211,15 +211,15 @@ export default function TableView({ lanes, tools }) {
                       </div>
                     ) : <span style={{ fontSize: 12, color: '#3a3a3c' }}>—</span>}
                   </td>
-                  <td style={{ padding: '11px 14px' }}>
+                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                     {tool.workflow
                       ? <span style={{ fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: tool.workflow === 1 ? '#e8f0fe' : '#ffeef2', color: tool.workflow === 1 ? '#004eb3' : '#a8003a' }}>Workflow {tool.workflow}</span>
                       : <span style={{ color: '#3a3a3c', fontSize: 13 }}>—</span>}
                   </td>
-                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f' }}>{COMPANIES[tool.id] || '—'}</td>
-                  <td style={{ padding: '11px 14px', textAlign: 'center' }}>
+                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{COMPANIES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', textAlign: 'center', verticalAlign: 'top', paddingTop: 14 }}>
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.2s', transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                      <path d="M2.5 5L7 9.5L11.5 5" stroke="var(--text-tertiary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </td>
                 </tr>,
