@@ -20,7 +20,6 @@
   --mono: 'DM Mono', monospace;
   --radius: 14px;
   --shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-hover: 0 8px 28px rgba(0,0,0,0.11), 0 2px 6px rgba(0,0,0,0.06);
 }
 
 body {
@@ -31,77 +30,10 @@ body {
   min-height: 100vh;
 }
 
-/* Swimlane */
-.lane { margin-bottom: 2rem; }
-.lane-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-.lane-label { font-size: 11px; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; color: var(--text-secondary); }
-.lane-stripe { height: 2px; border-radius: 2px; flex: 1; }
-.lane-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
-
-/* Card flip */
-.flip-container {
-  height: 460px;
-  perspective: 1200px;
-  perspective: 1200px;  /* perspective lives HERE, not on inner */
-}
-
-.flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.75s cubic-bezier(0.33, 1, 0.68, 1); /* slower, smoother */
-  transform-style: preserve-3d;
-}
-
-.flip-inner.flipped { transform: rotateY(180deg); }
-
-.flip-front, .flip-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  background: var(--surface);
+.workflow-banner {
   border-radius: var(--radius);
+  padding: 18px 20px 20px;
+  background: var(--surface);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s ease;
 }
-
-.flip-back { transform: rotateY(180deg); }
-
-.flip-container:hover .flip-front,
-.flip-container:hover .flip-back { box-shadow: var(--shadow-hover); }
-
-/* Card internals */
-.card-header { padding: 16px 18px 12px; border-bottom: 1px solid var(--border); position: relative; flex-shrink: 0; }
-.card-body { padding: 14px 18px; flex: 1; overflow-y: auto; }
-.card-back-body { padding: 16px 18px; flex: 1; overflow-y: auto; }
-
-.section-label { font-size: 11px; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-.divider { height: 1px; background: var(--border); margin: 10px 0; }
-
-.tag { display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; }
-.badge { font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 20px; }
-
-.skill-bar-track { flex: 1; height: 4px; background: var(--surface2); border-radius: 2px; overflow: hidden; }
-.skill-bar-fill { height: 100%; border-radius: 2px; }
-
-.flip-btn {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 12px; font-weight: 500; color: var(--apple-blue);
-  background: none; border: none; cursor: pointer; padding: 0;
-  font-family: var(--font); transition: opacity 0.15s;
-}
-.flip-btn:hover { opacity: 0.7; }
-
-.pro-con-row { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px; font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
-.dot-green { width: 6px; height: 6px; border-radius: 50%; background: var(--apple-green); flex-shrink: 0; margin-top: 4px; }
-.dot-red   { width: 6px; height: 6px; border-radius: 50%; background: var(--apple-red);   flex-shrink: 0; margin-top: 4px; }
-.dot-amber { width: 6px; height: 6px; border-radius: 50%; background: var(--apple-yellow); flex-shrink: 0; margin-top: 4px; }
-
-.pricing-pill { display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; padding: 4px 12px; border-radius: 20px; background: #f0f7ff; color: #004eb3; border: 1px solid rgba(0,122,255,0.15); }
-
-.workflow-banner { border-radius: var(--radius); padding: 20px 24px; margin-bottom: 14px; background: var(--surface); box-shadow: var(--shadow); }
