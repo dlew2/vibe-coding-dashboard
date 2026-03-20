@@ -12,12 +12,12 @@ export default function WorkflowBanner({ workflow }) {
       <div style={{ fontSize: 15, fontWeight: 500, color: 'var(--text-primary)', marginBottom: 3 }}>
         {workflow.label}
       </div>
-      <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 6 }}>
+      <div style={{ fontSize: 13, color: '#3a3a3c', marginBottom: 6 }}>
         {workflow.subtitle}
       </div>
       <div style={{ paddingBottom: 14, borderBottom: '1px solid var(--border)', marginBottom: 16 }}>
-        <div style={{ fontSize: 10, fontWeight: 500, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Your project</div>
-        <div style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5 }}>{workflow.project}</div>
+        <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Your project</div>
+        <div style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.5 }}>{workflow.project}</div>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {workflow.steps.map((step, i) => (
@@ -27,10 +27,10 @@ export default function WorkflowBanner({ workflow }) {
                 <ToolIcon type={step.icon} size={18} />
               </div>
               <div style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-primary)', textAlign: 'center' }}>{step.name}</div>
-              <div style={{ fontSize: 11, color: 'var(--text-secondary)', marginTop: 2, textAlign: 'center' }}>{step.role}</div>
+              <div style={{ fontSize: 11, color: '#3a3a3c', marginTop: 2, textAlign: 'center' }}>{step.role}</div>
             </div>
             {i < workflow.steps.length - 1 && (
-              <div style={{ fontSize: 14, color: 'var(--text-tertiary)', padding: '0 8px', marginBottom: 22 }}>→</div>
+              <div style={{ fontSize: 14, color: '#3a3a3c', padding: '0 8px', marginBottom: 22 }}>→</div>
             )}
           </div>
         ))}
