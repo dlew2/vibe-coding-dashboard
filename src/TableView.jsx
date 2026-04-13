@@ -21,6 +21,7 @@ function getIconPath(id) {
     case 'lovable':    return (<><circle cx="12" cy="12" r="9" fill="#e05c4b"/><path d="M12 17s-5-3.5-5-7a3 3 0 0 1 5-2.2A3 3 0 0 1 17 10c0 3.5-5 7-5 7z" fill="white"/></>)
     case 'framer':     return (<><rect x="3" y="3" width="18" height="18" rx="3" fill="#7c3aed"/><path d="M7 7h10v5H12l5 5H7v-5h5L7 7z" fill="white"/></>)
     case 'bolt':       return (<><circle cx="12" cy="12" r="9" fill="#d97706"/><path d="M13 4L7 13h5l-1 7 6-9h-5l1-7z" fill="white"/></>)
+    case 'aistudio':   return (<><rect x="3" y="3" width="18" height="18" rx="3" fill="#1a73e8"/><path d="M8 8h8M8 12h6M8 16h4" stroke="white" strokeWidth="1.5" strokeLinecap="round"/><circle cx="16" cy="15" r="3" fill="white"/><path d="M15 15l1 1 2-2" stroke="#1a73e8" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></>)
     default: return null
   }
 }
@@ -29,7 +30,7 @@ const COMPANIES = {
   claude: 'Anthropic', cursor: 'Anysphere', geminicli: 'Google',
   chatgpt: 'OpenAI', codexcli: 'OpenAI', v0: 'Vercel',
   figma: 'Figma', replit: 'Replit', stitch: 'Google', lovable: 'Lovable',
-  framer: 'Framer', bolt: 'StackBlitz',
+  framer: 'Framer', bolt: 'StackBlitz', aistudio: 'Google',
   github: 'Microsoft', vercel: 'Vercel',
   notebooklm: 'Google', cowork: 'Anthropic',
   supabase: 'Supabase', firebase: 'Google', appwrite: 'Appwrite',
@@ -39,7 +40,7 @@ const TYPES = {
   claude: 'Chat + CLI agent', cursor: 'AI code editor', geminicli: 'CLI agent',
   chatgpt: 'AI chat assistant', codexcli: 'CLI agent', v0: 'UI generator',
   figma: 'Design + AI gen', replit: 'Browser IDE', stitch: 'AI UI design',
-  lovable: 'Full-stack builder', framer: 'Visual site builder', bolt: 'Full-stack builder',
+  lovable: 'Full-stack builder', framer: 'Visual site builder', bolt: 'Full-stack builder', aistudio: 'Browser IDE',
   github: 'Version control', vercel: 'Deploy + host',
   notebooklm: 'Research + Q&A', cowork: 'Desktop automation',
   supabase: 'BaaS + Postgres', firebase: 'App platform', appwrite: 'Open-source BaaS',
@@ -58,6 +59,7 @@ const PRICING_LABELS = {
   lovable:    { label: '$25/mo+',      free: false },
   framer:     { label: 'Free tier',    free: true  },
   bolt:       { label: 'Free tier',    free: true  },
+  aistudio:   { label: 'Free',         free: true  },
   github:     { label: 'Free',         free: true  },
   vercel:     { label: 'Free tier',    free: true  },
   notebooklm: { label: 'Free',         free: true  },

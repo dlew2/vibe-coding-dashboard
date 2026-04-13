@@ -590,6 +590,38 @@ export const tools = [
     whenToUse: 'When you want Lovable-style full-stack generation but prefer token-based pricing or need Figma import. Good for solo builders who want maximum tokens for the price.',
     whenToAvoid: 'For teams — Lovable\'s flat $25/mo covers unlimited users vs $30/user on Bolt. Also avoid for enterprise-grade apps where complex logic and security are critical.',
   },
+  {
+    id: 'aistudio',
+    name: 'Google AI Studio',
+    tagline: 'Free browser IDE for prototyping with Gemini models',
+    workflow: null,
+    workflowColor: null,
+    iconBg: '#e8f4fb',
+    iconColor: '#1a73e8',
+    tags: ['Prompt IDE', 'API keygen', 'Vibe coding', 'Multimodal'],
+    tagColor: { bg: '#e8f4fb', text: '#0c447c' },
+    skillDesign: 25,
+    skillCoding: 35,
+    skillColor: '#1a73e8',
+    howItWorks: "A free browser-based IDE for experimenting with Google's Gemini models. Test prompts, build app prototypes, generate API keys, fine-tune models, and export working code — all without installing anything. Think of it as the browser-based equivalent of Claude.ai but built around Gemini, with direct access to multimodal models including text, image, video, and audio.",
+    yourProject: null,
+    pros: [
+      'Completely free — no subscription, no credit card for basic use',
+      'Generous free API tier — start building without paying anything',
+      'Multimodal — test text, image, video, and audio prompts in one place',
+      'Project Spend Caps added March 2026 — control API costs precisely',
+      '1M token context window on Gemini models',
+    ],
+    cons: [
+      'Free tier data may be used by Google for model training',
+      'Less polished for vibe coding vs Claude.ai or ChatGPT',
+      'Costs arise quickly when moving to production API usage',
+      'Gemini models trail Claude and GPT-5 on nuanced writing tasks',
+    ],
+    pricing: 'Free (browser IDE) · API free tier · then pay-as-you-go',
+    whenToUse: 'When you want to prototype with Gemini models for free, generate an API key, or test multimodal prompts (text + image + video) without any setup or cost.',
+    whenToAvoid: 'When you need the best reasoning or writing quality — Claude.ai and ChatGPT have an edge. Also avoid the free tier for sensitive business data as Google may use it for training.',
+  },
 ]
 
 export const workflows = [

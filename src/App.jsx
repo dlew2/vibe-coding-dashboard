@@ -5,7 +5,7 @@ import ToolCard from './ToolCard'
 import TableView from './TableView'
 
 const LANES = [
-  { id: 'ai',        label: 'AI & coding',              stripe: '#afa9ec', ids: ['claude', 'chatgpt', 'cursor', 'geminicli', 'codexcli'] },
+  { id: 'ai',        label: 'AI & coding',              stripe: '#afa9ec', ids: ['claude', 'chatgpt', 'cursor', 'geminicli', 'codexcli', 'aistudio'] },
   { id: 'fullstack', label: 'Full-stack builders',       stripe: '#f0997b', ids: ['lovable', 'bolt', 'replit', 'v0'] },
   { id: 'design',    label: 'Design & prototyping',      stripe: '#ed93b1', ids: ['figma', 'framer', 'stitch'] },
   { id: 'deploy',    label: 'Deploy & version control',  stripe: '#97c459', ids: ['github', 'vercel'] },
