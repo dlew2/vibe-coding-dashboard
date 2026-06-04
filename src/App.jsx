@@ -5,7 +5,7 @@ import ToolCard from './ToolCard'
 import TableView from './TableView'
 
 const LANES = [
-  { id: 'ai',        label: 'AI & coding',              stripe: '#afa9ec', ids: ['claude', 'chatgpt', 'cursor', 'geminicli', 'codexcli', 'aistudio'] },
+  { id: 'ai',        label: 'AI & coding',              stripe: '#afa9ec', ids: ['claude', 'chatgpt', 'cursor', 'windsurf', 'copilot', 'geminicli', 'codexcli', 'aistudio'] },
   { id: 'fullstack', label: 'Full-stack builders',       stripe: '#f0997b', ids: ['lovable', 'bolt', 'replit', 'v0'] },
   { id: 'design',    label: 'Design & prototyping',      stripe: '#ed93b1', ids: ['figma', 'framer', 'stitch'] },
   { id: 'deploy',    label: 'Deploy & version control',  stripe: '#97c459', ids: ['github', 'vercel'] },
@@ -30,6 +30,7 @@ export default function App() {
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
             <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
             <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & workflows</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated June 3 2026</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ fontSize: 12, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
