@@ -455,7 +455,7 @@ export const tools = [
   {
     id: 'v0',
     name: 'v0 by Vercel',
-    tagline: 'AI-powered React/Next.js component generator',
+    tagline: 'AI frontend platform — React components to full-stack sandbox',
     workflow: null,
     workflowColor: null,
     iconBg: '#f0f0f0',
@@ -465,16 +465,17 @@ export const tools = [
     skillDesign: 60,
     skillCoding: 30,
     skillColor: '#1a1a1a',
-    howItWorks: 'Describe a UI in plain English and v0 generates production-ready React + Tailwind + shadcn/ui components instantly. Deploy to Vercel with one click. February 2026 major update added Git integration, a VS Code-style editor, database connectivity, and agentic workflows — evolving from a component generator into a more full development tool. Pricing remains the same post-update: token-based credits per plan.',
+    howItWorks: 'Describe a UI in plain English and v0 generates production-ready React + Tailwind + shadcn/ui components instantly. Now available at v0.app (rebranded from v0.dev in late 2025). A major 2026 update added a built-in code editor, Git integration with branch creation and PRs from chat, a full-stack sandbox runtime, and database connectivity. One-click deploy to Vercel. Used by 6M+ developers and 80K+ active teams.',
     yourProject: null,
     pros: [
       'Cleanest React/Next.js component output of any AI tool',
       'February 2026 update added Git integration, code editor, and DB connectivity',
+      'February 2026 update added Git panel, built-in code editor, and full-stack sandbox runtime',
       'One-click deploy to Vercel — no pipeline setup needed',
       'shadcn/ui + Tailwind output is production-grade',
     ],
     cons: [
-      'Frontend-first by design — backend/auth still require external tools',
+      'Still frontend-first — backend, auth, and database rely on external tools despite new full-stack features',
       'Credit-based pricing: token usage scales with prompt complexity',
       'Tightly tied to Vercel ecosystem — less flexibility for other hosts',
     ],
