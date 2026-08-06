@@ -30,7 +30,7 @@ export default function App() {
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
             <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
             <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & workflows</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated June 3 2026</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 6 2026</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ fontSize: 12, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
@@ -79,7 +79,7 @@ export default function App() {
         )}
 
         <div style={{ marginTop: 40, textAlign: 'center', fontSize: 12, color: '#3a3a3c' }}>
-          Last updated March 2026 · Built with React + Vite + Vercel
+          Last updated August 2026 · Built with React + Vite + Vercel
         </div>
       </main>
     </div>
