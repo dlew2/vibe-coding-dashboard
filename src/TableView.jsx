@@ -32,6 +32,7 @@ const COMPANIES = {
   figma: 'Figma', replit: 'Replit', stitch: 'Google', lovable: 'Lovable',
   framer: 'Framer', bolt: 'StackBlitz', aistudio: 'Google',
   github: 'Microsoft', vercel: 'Vercel',
+  windsurf: 'Cognition', copilot: 'GitHub',
   notebooklm: 'Google', cowork: 'Anthropic',
   supabase: 'Supabase', firebase: 'Google', appwrite: 'Appwrite',
 }
@@ -42,6 +43,7 @@ const TYPES = {
   figma: 'Design + AI gen', replit: 'Browser IDE', stitch: 'AI UI design',
   lovable: 'Full-stack builder', framer: 'Visual site builder', bolt: 'Full-stack builder', aistudio: 'Browser IDE',
   github: 'Version control', vercel: 'Deploy + host',
+  windsurf: 'AI code editor', copilot: 'AI coding assistant',
   notebooklm: 'Research + Q&A', cowork: 'Desktop automation',
   supabase: 'BaaS + Postgres', firebase: 'App platform', appwrite: 'Open-source BaaS',
 }
@@ -67,6 +69,8 @@ const PRICING_LABELS = {
   supabase:   { label: 'Free tier',    free: true  },
   firebase:   { label: 'Free tier',    free: true  },
   appwrite:   { label: 'Free tier',    free: true  },
+  windsurf:   { label: 'Free tier',    free: true  },
+  copilot:    { label: 'Free tier',    free: true  },
 }
 
 function diffIndicator(skillCoding) {
@@ -148,17 +152,16 @@ export default function TableView({ lanes, tools }) {
     <div style={{ border: '1px solid var(--border)', borderRadius: 'var(--radius)', overflow: 'hidden', background: 'var(--surface)' }}>
       <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
         <colgroup>
-          <col style={{ width: '26%' }} />
+          <col style={{ width: '32%' }} />
+          <col style={{ width: '15%' }} />
           <col style={{ width: '13%' }} />
-          <col style={{ width: '11%' }} />
-          <col style={{ width: '12%' }} />
-          <col style={{ width: '12%' }} />
-          <col style={{ width: '12%' }} />
+          <col style={{ width: '15%' }} />
+          <col style={{ width: '20%' }} />
           <col style={{ width: '5%' }} />
         </colgroup>
         <thead>
           <tr style={{ background: 'var(--surface2)' }}>
-            {['Tool', 'Type', 'Pricing', 'Coding req.', 'Workflow', 'Company', ''].map((h, i) => (
+            {['Tool', 'Type', 'Pricing', 'Coding req.', 'Company', ''].map((h, i) => (
               <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
             ))}
           </tr>
@@ -175,7 +178,7 @@ export default function TableView({ lanes, tools }) {
               return [
                 isFirst && (
                   <tr key={`cat-${lane.id}`}>
-                    <td colSpan={7} style={{ padding: '7px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
+                    <td colSpan={6} style={{ padding: '7px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <span style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lane.label}</span>
                         <div style={{ flex: 1, height: 1, background: lane.stripe, opacity: 0.7 }} />
@@ -213,11 +216,6 @@ export default function TableView({ lanes, tools }) {
                       </div>
                     ) : <span style={{ fontSize: 12, color: '#3a3a3c' }}>—</span>}
                   </td>
-                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
-                    {tool.workflow
-                      ? <span style={{ fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: tool.workflow === 1 ? '#e8f0fe' : '#ffeef2', color: tool.workflow === 1 ? '#004eb3' : '#a8003a' }}>Workflow {tool.workflow}</span>
-                      : <span style={{ color: '#3a3a3c', fontSize: 13 }}>—</span>}
-                  </td>
                   <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{COMPANIES[tool.id] || '—'}</td>
                   <td style={{ padding: '11px 14px', textAlign: 'center', verticalAlign: 'top', paddingTop: 14 }}>
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.2s', transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)' }}>
@@ -227,7 +225,7 @@ export default function TableView({ lanes, tools }) {
                 </tr>,
                 isActive && (
                   <tr key={`panel-${tool.id}`}>
-                    <td colSpan={7} style={{ padding: 0 }}>
+                    <td colSpan={6} style={{ padding: 0 }}>
                       <DetailPanel tool={tool} onClose={() => setActiveId(null)} />
                     </td>
                   </tr>

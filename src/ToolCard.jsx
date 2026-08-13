@@ -26,12 +26,6 @@ function getIconPath(id) {
   }
 }
 
-function WorkflowBadge({ workflow }) {
-  if (!workflow) return null
-  const bg   = workflow === 1 ? '#e8f0fe' : '#ffeef2'
-  const text = workflow === 1 ? '#003d8f' : '#8b0000'
-  return <span style={{ fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: bg, color: text, flexShrink: 0 }}>Workflow {workflow}</span>
-}
 
 function SL({ children }) {
   return <div style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{children}</div>
@@ -84,7 +78,6 @@ export default function ToolCard({ tool, isExpanded, onToggle }) {
           <div style={{ fontSize: 12, color: '#3a3a3c', marginTop: 2 }}>{tool.tagline}</div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-          <WorkflowBadge workflow={tool.workflow} />
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.25s', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', flexShrink: 0 }}>
             <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
