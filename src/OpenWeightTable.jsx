@@ -65,7 +65,8 @@ export default function OpenWeightTable({ models }) {
               </tr>,
               isActive && (
                 <tr key={`${model.id}-detail`}>
-                  <td colSpan={7} style={{ padding: '16px 18px 18px', background: '#fafafc', borderBottom: '1px solid var(--border)' }}>
+                  <td colSpan={7} style={{ padding: '16px 18px 18px', background: '#fafafc', borderBottom: '1px solid var(--border)', animation: 'slideDown 0.3s cubic-bezier(0.4,0,0.2,1)' }}>
+                    <style>{`@keyframes slideDown { from { opacity:0; transform:translateY(-6px) } to { opacity:1; transform:translateY(0) } }`}</style>
                     <div style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.5, marginBottom: 14 }}>{model.tagline}</div>
 
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
