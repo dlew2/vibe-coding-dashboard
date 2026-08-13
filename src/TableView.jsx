@@ -81,12 +81,12 @@ function diffIndicator(skillCoding) {
 }
 
 function SectionLabel({ children, style }) {
-  return <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5, ...style }}>{children}</div>
+  return <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5, ...style }}>{children}</div>
 }
 
 function DotRow({ color, text }) {
   return (
-    <div style={{ display: 'flex', gap: 6, marginBottom: 5, fontSize: 12, color: '#1d1d1f', lineHeight: 1.4 }}>
+    <div style={{ display: 'flex', gap: 6, marginBottom: 5, fontSize: 15, color: '#1d1d1f', lineHeight: 1.4 }}>
       <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, flexShrink: 0, marginTop: 4 }} />{text}
     </div>
   )
@@ -106,21 +106,21 @@ function DetailPanel({ tool, onClose }) {
       <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 20 }}>
         {/* Col 1 — How it works */}
         <div>
-          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>How it works</div>
-          <p style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 12 }}>{tool.howItWorks}</p>
-          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Best for</div>
+          <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>How it works</div>
+          <p style={{ fontSize: 16, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 12 }}>{tool.howItWorks}</p>
+          <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Best for</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
-            {tool.tags.map(t => <span key={t} style={{ fontSize: 11, fontWeight: 500, padding: '3px 9px', borderRadius: 20, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
+            {tool.tags.map(t => <span key={t} style={{ fontSize: 14, fontWeight: 500, padding: '3px 9px', borderRadius: 20, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
           </div>
         </div>
 
         {/* Col 2 — Pros & cons */}
         <div>
-          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>Pros &amp; cons</div>
-          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Pros</div>
+          <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>Pros &amp; cons</div>
+          <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Pros</div>
           {tool.pros.map((p, i) => <DotRow key={i} color="#1e7e34" text={p} />)}
           <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Cons</div>
+            <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Cons</div>
             {tool.cons.map((c, i) => <DotRow key={i} color="#c0392b" text={c} />)}
           </div>
         </div>
@@ -128,14 +128,14 @@ function DetailPanel({ tool, onClose }) {
         {/* Col 3 — Pricing + close button inline with header */}
         <div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>
-            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
-            <button onClick={onClose} style={{ fontSize: 11, fontWeight: 500, color: '#1d1d1f', cursor: 'pointer', background: 'none', border: '1px solid #6e6e73', borderRadius: 6, padding: '3px 9px', fontFamily: 'var(--font)', lineHeight: 1 }}>✕ Close</button>
+            <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
+            <button onClick={onClose} style={{ fontSize: 14, fontWeight: 500, color: '#1d1d1f', cursor: 'pointer', background: 'none', border: '1px solid #6e6e73', borderRadius: 6, padding: '3px 9px', fontFamily: 'var(--font)', lineHeight: 1 }}>✕ Close</button>
           </div>
-          <div style={{ fontSize: 12, fontWeight: 500, padding: '4px 12px', borderRadius: 20, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)', display: 'inline-block', marginBottom: 12 }}>{tool.pricing}</div>
-          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to use</div>
+          <div style={{ fontSize: 15, fontWeight: 500, padding: '4px 12px', borderRadius: 20, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)', display: 'inline-block', marginBottom: 12 }}>{tool.pricing}</div>
+          <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to use</div>
           <DotRow color="#1e7e34" text={tool.whenToUse} />
           <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to avoid</div>
+            <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to avoid</div>
             <DotRow color="#b7600a" text={tool.whenToAvoid} />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function TableView({ lanes, tools }) {
         <thead>
           <tr style={{ background: 'var(--surface2)' }}>
             {['Tool', 'Type', 'Pricing', 'Coding req.', 'Company', ''].map((h, i) => (
-              <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
+              <th key={i} style={{ padding: '10px 14px', fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -180,7 +180,7 @@ export default function TableView({ lanes, tools }) {
                   <tr key={`cat-${lane.id}`}>
                     <td colSpan={6} style={{ padding: '7px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <span style={{ fontSize: 10, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lane.label}</span>
+                        <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lane.label}</span>
                       </div>
                     </td>
                   </tr>
@@ -198,24 +198,24 @@ export default function TableView({ lanes, tools }) {
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none">{getIconPath(tool.id)}</svg>
                       </div>
                       <div style={{ minWidth: 0 }}>
-                        <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tool.name}</div>
-                        <div style={{ fontSize: 11, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 1 }}>{tool.tagline}</div>
+                        <div style={{ fontSize: 16, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tool.name}</div>
+                        <div style={{ fontSize: 14, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 1 }}>{tool.tagline}</div>
                       </div>
                     </div>
                   </td>
-                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{TYPES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', fontSize: 15, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{TYPES[tool.id] || '—'}</td>
                   <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
-                    <span style={{ fontSize: 11, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: pl.free ? '#e8faf4' : '#f1efe8', color: pl.free ? '#0a6b4a' : '#444441', whiteSpace: 'nowrap' }}>{pl.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: pl.free ? '#e8faf4' : '#f1efe8', color: pl.free ? '#0a6b4a' : '#444441', whiteSpace: 'nowrap' }}>{pl.label}</span>
                   </td>
                   <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                     {diff ? (
                       <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
                         <div style={{ width: 8, height: 8, borderRadius: '50%', background: diff.color, flexShrink: 0 }} />
-                        <span style={{ fontSize: 12, color: '#1d1d1f' }}>{diff.label}</span>
+                        <span style={{ fontSize: 15, color: '#1d1d1f' }}>{diff.label}</span>
                       </div>
-                    ) : <span style={{ fontSize: 12, color: '#3a3a3c' }}>—</span>}
+                    ) : <span style={{ fontSize: 15, color: '#3a3a3c' }}>—</span>}
                   </td>
-                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{COMPANIES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', fontSize: 15, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{COMPANIES[tool.id] || '—'}</td>
                   <td style={{ padding: '11px 14px', textAlign: 'center', verticalAlign: 'top', paddingTop: 14 }}>
                     <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.2s', transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                       <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

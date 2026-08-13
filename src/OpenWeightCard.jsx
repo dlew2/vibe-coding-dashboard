@@ -38,8 +38,8 @@ export default function OpenWeightCard({ model, isExpanded, onToggle }) {
           <div style={{ width: 11, height: 11, borderRadius: 4, background: model.accent }} />
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 15, fontWeight: 500, color: '#1d1d1f', lineHeight: 1.2 }}>{model.name}</div>
-          <div style={{ fontSize: 12, color: '#3a3a3c', marginTop: 2 }}>{model.maker} · {model.rank}</div>
+          <div style={{ fontSize: 19, fontWeight: 500, color: '#1d1d1f', lineHeight: 1.2 }}>{model.name}</div>
+          <div style={{ fontSize: 15, color: '#3a3a3c', marginTop: 2 }}>{model.maker} · {model.rank}</div>
         </div>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.25s', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', flexShrink: 0 }}>
           <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -56,17 +56,17 @@ export default function OpenWeightCard({ model, isExpanded, onToggle }) {
       }}>
         <div ref={contentRef}>
           <div style={{ padding: '14px 16px 16px' }}>
-            <div style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.5, paddingBottom: 14, borderBottom: '1px solid var(--border)', marginBottom: 14 }}>
+            <div style={{ fontSize: 16, color: '#1d1d1f', lineHeight: 1.5, paddingBottom: 14, borderBottom: '1px solid var(--border)', marginBottom: 14 }}>
               {model.tagline}
             </div>
 
             <dl style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: 12, rowGap: 6, margin: 0, marginBottom: 14 }}>
               {SPEC_ROWS.map(row => (
                 <div key={row.label} style={{ display: 'contents' }}>
-                  <dt style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', paddingTop: 2, whiteSpace: 'nowrap' }}>
+                  <dt style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', paddingTop: 2, whiteSpace: 'nowrap' }}>
                     {row.label}
                   </dt>
-                  <dd style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.45, margin: 0 }}>{model[row.field]}</dd>
+                  <dd style={{ fontSize: 15, color: '#1d1d1f', lineHeight: 1.45, margin: 0 }}>{model[row.field]}</dd>
                 </div>
               ))}
             </dl>
@@ -81,19 +81,19 @@ export default function OpenWeightCard({ model, isExpanded, onToggle }) {
                   alignItems: 'baseline',
                   gap: 6,
                 }}>
-                  <span style={{ fontSize: 10, color: '#3a3a3c' }}>{b.label}</span>
-                  <span style={{ fontSize: 12, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{b.value}</span>
+                  <span style={{ fontSize: 13, color: '#3a3a3c' }}>{b.label}</span>
+                  <span style={{ fontSize: 15, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{b.value}</span>
                 </div>
               ))}
             </div>
 
             <div style={{ marginBottom: 10 }}>
-              <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Why it stands out</div>
-              <div style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.5 }}>{model.strengths}</div>
+              <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Why it stands out</div>
+              <div style={{ fontSize: 15, color: '#1d1d1f', lineHeight: 1.5 }}>{model.strengths}</div>
             </div>
             <div>
-              <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Trade-offs</div>
-              <div style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.5 }}>{model.tradeoffs}</div>
+              <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 3 }}>Trade-offs</div>
+              <div style={{ fontSize: 15, color: '#1d1d1f', lineHeight: 1.5 }}>{model.tradeoffs}</div>
             </div>
           </div>
         </div>
