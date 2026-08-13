@@ -30,10 +30,3 @@ body {
   min-height: 100vh;
 }
 
-.workflow-banner {
-  border-radius: var(--radius);
-  padding: 18px 20px 20px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-}

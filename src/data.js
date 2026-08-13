@@ -681,31 +681,76 @@ export const tools = [
   },
 ]
 
-export const workflows = [
+export const openWeightModels = [
   {
-    id: 1,
-    label: 'Workflow 1 — current stack',
-    subtitle: 'AI Updates dashboard · local dev · GitHub deploy',
-    color: '#007aff',
-    project: 'AI Updates dashboard (ai-updates-ten.vercel.app) — React/Vite app with on-demand RSS summarization, Apple-inspired design, mobile responsive.',
-    steps: [
-      { name: 'Claude.ai', role: 'Ideate & generate', iconBg: '#f0f4ff', icon: 'claude' },
-      { name: 'Claude Code', role: 'Edit & build locally', iconBg: '#f0f4ff', icon: 'claudecode' },
-      { name: 'GitHub', role: 'Commit & version', iconBg: '#eaf3de', icon: 'github' },
-      { name: 'Vercel', role: 'Deploy & host', iconBg: '#f5f5f7', icon: 'vercel' },
+    id: 'kimi-k3',
+    name: 'Kimi K3',
+    maker: 'Moonshot AI',
+    rank: 'Strongest open model overall',
+    accent: '#5856d6',
+    accentBg: '#eeedfe',
+    tagline: 'Frontier-class reasoning and agentic coding you can download.',
+    specs: [
+      { label: 'Parameters', value: '2.8T MoE (16 of 896 experts per token)' },
+      { label: 'Context', value: '1M tokens' },
+      { label: 'License', value: 'Modified MIT (Kimi K3 License)' },
+      { label: 'Weights', value: 'Hugging Face — moonshotai/Kimi-K3, July 27 2026' },
+      { label: 'API price', value: '$3 / $15 per 1M tokens (in / out)' },
     ],
+    benchmarks: [
+      { label: 'GPQA Diamond', value: '93.5%' },
+      { label: "Humanity's Last Exam", value: '56%' },
+      { label: 'Terminal-Bench 2.1', value: '88.3%' },
+      { label: 'LiveBench Coding', value: '81.5' },
+    ],
+    strengths: 'Tops the open-weight leaderboards on reasoning, browsing and terminal use. Native vision, hybrid linear attention, and the best long-horizon agentic coding of any downloadable model.',
+    tradeoffs: 'At 2.8T parameters it is realistically an API model — self-hosting means a rented multi-GPU node. The licence is modified, not plain MIT.',
   },
   {
-    id: 2,
-    label: 'Workflow 2 — Figma Make + Supabase',
-    subtitle: 'Guitar Practice Tracker · browser-based · cloud backend',
-    color: '#ff2d55',
-    project: 'Guitar Practice Tracker — React + Tailwind, Apple-inspired design, 34 features including metronome, chord finder, recorder, and spaced repetition.',
-    steps: [
-      { name: 'Figma Make', role: 'Design & build UI', iconBg: '#fff0f3', icon: 'figma' },
-      { name: 'React + Tailwind', role: 'Generated code', iconBg: '#e8faf4', icon: 'react' },
-      { name: 'Supabase', role: 'Auth & cloud data', iconBg: '#e8faf4', icon: 'supabase' },
-      { name: 'Figma hosted', role: 'Live in browser', iconBg: '#fff0f3', icon: 'web' },
+    id: 'glm-5-2',
+    name: 'GLM-5.2',
+    maker: 'Z.ai (Zhipu)',
+    rank: 'Best single-node model',
+    accent: '#0b8f6a',
+    accentBg: '#e8faf4',
+    tagline: 'The practical pick — genuinely MIT, and it fits on one machine.',
+    specs: [
+      { label: 'Parameters', value: '753B sparse MoE (~40B active)' },
+      { label: 'Context', value: '1M tokens (131K output)' },
+      { label: 'License', value: 'MIT — no regional restrictions' },
+      { label: 'Weights', value: 'Hugging Face, June 2026' },
+      { label: 'API price', value: 'Roughly a sixth of comparable closed models' },
     ],
+    benchmarks: [
+      { label: 'GPQA Diamond', value: '91.2%' },
+      { label: "Humanity's Last Exam", value: '54.7%' },
+      { label: 'Single-node coding leader', value: '51.1' },
+    ],
+    strengths: 'Fully permissive MIT weights, 1M context kept affordable by its IndexShare sparse attention, and the strongest scores among models that fit a single inference node.',
+    tradeoffs: 'Still trails Kimi K3 and DeepSeek V4 Pro on the hardest agentic coding benchmarks. "Single node" still means serious GPU hardware.',
+  },
+  {
+    id: 'deepseek-v4',
+    name: 'DeepSeek V4',
+    maker: 'DeepSeek',
+    rank: 'Best cost-to-performance',
+    accent: '#c2410c',
+    accentBg: '#fff1e8',
+    tagline: 'Leads agentic coding on downloadable weights, at a fraction of the price.',
+    specs: [
+      { label: 'Parameters', value: 'V4 Pro — 1.6T MoE (49B active) · V4 Flash — 284B' },
+      { label: 'Context', value: '1M tokens' },
+      { label: 'License', value: 'MIT' },
+      { label: 'Weights', value: 'Hugging Face — Pro and Flash both downloadable' },
+      { label: 'API price', value: 'Pro $0.44 / $0.87 · Flash $0.14 / $0.28 per 1M' },
+    ],
+    benchmarks: [
+      { label: 'SWE-bench Verified (Pro Max)', value: '80.6%' },
+      { label: 'SWE-bench Verified (Flash)', value: '79.0%' },
+    ],
+    strengths: 'Highest SWE-bench Verified score of any model you can download, and the Flash variant gets within 2 points at a twentieth of the token cost. Plain MIT licence.',
+    tradeoffs: 'Weaker than Kimi K3 on general reasoning and multimodal work. Pro is too large for practical self-hosting — Flash is the one you would actually run.',
   },
 ]
+
+export const openWeightNote = 'Open-weight means the model files are published and you can download, self-host, fine-tune, and inspect them — as opposed to closed models like Claude or GPT that exist only behind an API. The gap to the closed frontier is now small; what remains is instruction-following polish and multimodal depth.'

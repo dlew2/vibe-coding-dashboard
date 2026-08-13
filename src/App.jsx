@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { tools, workflows } from './data'
-import WorkflowBanner from './WorkflowBanner'
+import { tools, openWeightModels, openWeightNote } from './data'
+import OpenWeightCard from './OpenWeightCard'
 import ToolCard from './ToolCard'
 import TableView from './TableView'
 
@@ -29,8 +29,8 @@ export default function App() {
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
             <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & workflows</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 6 2026</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & open models</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 13 2026</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ fontSize: 12, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
@@ -43,9 +43,12 @@ export default function App() {
       </header>
 
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '28px 24px 60px' }}>
-        <SectionHeading>My workflows</SectionHeading>
-        <div style={{ marginTop: 12, marginBottom: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
-          {workflows.map(wf => <WorkflowBanner key={wf.id} workflow={wf} />)}
+        <SectionHeading>Top open-weight models</SectionHeading>
+        <div style={{ marginTop: 8, fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780 }}>
+          {openWeightNote}
+        </div>
+        <div style={{ marginTop: 16, marginBottom: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 14, alignItems: 'stretch' }}>
+          {openWeightModels.map(m => <OpenWeightCard key={m.id} model={m} />)}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>

@@ -51,6 +51,21 @@ export function ToolIcon({ type, size = 20 }) {
           <path d="M12 3c0 0 4 4 4 9s-4 9-4 9M12 3c0 0-4 4-4 9s4 9 4 9M3 12h18" stroke="#ff2d55" strokeWidth="1.3" strokeLinecap="round"/>
         </svg>
       )
+    case 'windsurf':
+      return (
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none">
+          <path d="M6 18L14 4l4 14H6z" fill="#378add"/>
+          <path d="M5 21c4-1.5 8-1.5 14 0" stroke="#378add" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      )
+    case 'copilot':
+      return (
+        <svg width={s} height={s} viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" fill="#3b6d11"/>
+          <circle cx="12" cy="12" r="3" fill="white"/>
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+      )
     default:
       return null
   }
