@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { tools, openWeightModels, openWeightNote } from './data'
 import OpenWeightCard from './OpenWeightCard'
+import OpenWeightTable from './OpenWeightTable'
 import ToolCard from './ToolCard'
 import TableView from './TableView'
 
@@ -12,6 +13,10 @@ const LANES = [
   { id: 'productivity', label: 'Research & productivity', stripe: '#fac775', ids: ['notebooklm', 'cowork'] },
   { id: 'backend',   label: 'Backend & data',            stripe: '#5dcaa5', ids: ['supabase', 'firebase', 'appwrite'] },
 ]
+
+// The open-weight models section sits between the AI & coding lane and the rest.
+const AI_LANES = LANES.filter(l => l.id === 'ai')
+const REST_LANES = LANES.filter(l => l.id !== 'ai')
 
 export default function App() {
   const [view, setView] = useState('table')
@@ -43,14 +48,6 @@ export default function App() {
       </header>
 
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '28px 24px 60px' }}>
-        <SectionHeading>Top open-weight models</SectionHeading>
-        <div style={{ marginTop: 8, fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780 }}>
-          {openWeightNote}
-        </div>
-        <div style={{ marginTop: 16, marginBottom: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 14, alignItems: 'stretch' }}>
-          {openWeightModels.map(m => <OpenWeightCard key={m.id} model={m} />)}
-        </div>
-
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
           <SectionHeading>Tools</SectionHeading>
           <span style={{ fontSize: 12, color: '#3a3a3c' }}>
@@ -59,25 +56,16 @@ export default function App() {
         </div>
 
         {view === 'table' ? (
-          <TableView lanes={LANES} tools={tools} />
+          <>
+            <TableView lanes={AI_LANES} tools={tools} />
+            <OpenWeightSection view={view} />
+            <TableView lanes={REST_LANES} tools={tools} />
+          </>
         ) : (
           <div>
-            {LANES.map(lane => {
-              const laneTools = lane.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
-              return (
-                <div key={lane.id} style={{ marginBottom: '2rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <span style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
-                    <div style={{ height: 2, borderRadius: 2, flex: 1, background: lane.stripe }} />
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
-                    {laneTools.map(tool => (
-                      <ToolCard key={tool.id} tool={tool} isExpanded={expandedIds.has(tool.id)} onToggle={() => toggle(tool.id)} />
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
+            {AI_LANES.map(lane => renderLaneCards(lane, expandedIds, toggle))}
+            <OpenWeightSection view={view} />
+            {REST_LANES.map(lane => renderLaneCards(lane, expandedIds, toggle))}
           </div>
         )}
 
@@ -120,6 +108,46 @@ function ViewBtn({ label, icon, active, onClick }) {
       )}
       {label}
     </button>
+  )
+}
+
+function OpenWeightSection({ view }) {
+  return (
+    <div style={{ margin: '28px 0 32px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
+        <SectionHeading>Top open-weight models</SectionHeading>
+        <span style={{ fontSize: 12, color: '#3a3a3c' }}>
+          {view === 'table' ? 'Click any row to expand detail' : 'Full detail on each card'}
+        </span>
+      </div>
+      <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
+        {openWeightNote}
+      </div>
+      {view === 'table' ? (
+        <OpenWeightTable models={openWeightModels} />
+      ) : (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 14, alignItems: 'stretch' }}>
+          {openWeightModels.map(m => <OpenWeightCard key={m.id} model={m} />)}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function renderLaneCards(lane, expandedIds, toggle) {
+  const laneTools = lane.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
+  return (
+    <div key={lane.id} style={{ marginBottom: '2rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+        <span style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
+        <div style={{ height: 2, borderRadius: 2, flex: 1, background: lane.stripe }} />
+      </div>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
+        {laneTools.map(tool => (
+          <ToolCard key={tool.id} tool={tool} isExpanded={expandedIds.has(tool.id)} onToggle={() => toggle(tool.id)} />
+        ))}
+      </div>
+    </div>
   )
 }
 

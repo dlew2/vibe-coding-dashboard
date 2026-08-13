@@ -102,9 +102,9 @@ function DetailPanel({ tool, onClose }) {
       <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 20 }}>
         {/* Col 1 — How it works */}
         <div>
-          <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>How it works</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>How it works</div>
           <p style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 12 }}>{tool.howItWorks}</p>
-          <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Best for</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Best for</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
             {tool.tags.map(t => <span key={t} style={{ fontSize: 11, fontWeight: 500, padding: '3px 9px', borderRadius: 20, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
           </div>
@@ -112,11 +112,11 @@ function DetailPanel({ tool, onClose }) {
 
         {/* Col 2 — Pros & cons */}
         <div>
-          <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>Pros &amp; cons</div>
-          <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Pros</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>Pros &amp; cons</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Pros</div>
           {tool.pros.map((p, i) => <DotRow key={i} color="#1e7e34" text={p} />)}
           <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Cons</div>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Cons</div>
             {tool.cons.map((c, i) => <DotRow key={i} color="#c0392b" text={c} />)}
           </div>
         </div>
@@ -124,14 +124,14 @@ function DetailPanel({ tool, onClose }) {
         {/* Col 3 — Pricing + close button inline with header */}
         <div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
             <button onClick={onClose} style={{ fontSize: 11, fontWeight: 500, color: '#1d1d1f', cursor: 'pointer', background: 'none', border: '1px solid #6e6e73', borderRadius: 6, padding: '3px 9px', fontFamily: 'var(--font)', lineHeight: 1 }}>✕ Close</button>
           </div>
           <div style={{ fontSize: 12, fontWeight: 500, padding: '4px 12px', borderRadius: 20, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)', display: 'inline-block', marginBottom: 12 }}>{tool.pricing}</div>
-          <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to use</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to use</div>
           <DotRow color="#1e7e34" text={tool.whenToUse} />
           <div style={{ marginTop: 8 }}>
-            <div style={{ fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to avoid</div>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to avoid</div>
             <DotRow color="#b7600a" text={tool.whenToAvoid} />
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function TableView({ lanes, tools }) {
         <thead>
           <tr style={{ background: 'var(--surface2)' }}>
             {['Tool', 'Type', 'Pricing', 'Coding req.', 'Workflow', 'Company', ''].map((h, i) => (
-              <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
+              <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
             ))}
           </tr>
         </thead>

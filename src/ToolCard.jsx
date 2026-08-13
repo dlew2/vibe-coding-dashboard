@@ -30,11 +30,11 @@ function WorkflowBadge({ workflow }) {
   if (!workflow) return null
   const bg   = workflow === 1 ? '#e8f0fe' : '#ffeef2'
   const text = workflow === 1 ? '#003d8f' : '#8b0000'
-  return <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 8px', borderRadius: 20, background: bg, color: text, flexShrink: 0 }}>Workflow {workflow}</span>
+  return <span style={{ fontSize: 10, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: bg, color: text, flexShrink: 0 }}>Workflow {workflow}</span>
 }
 
 function SL({ children }) {
-  return <div style={{ fontSize: 11, fontWeight: 600, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{children}</div>
+  return <div style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{children}</div>
 }
 
 function SkillRow({ label, value, color }) {
@@ -110,7 +110,7 @@ export default function ToolCard({ tool, isExpanded, onToggle }) {
               <SkillRow label="Design" value={tool.skillDesign} color={tool.skillColor} />
               <SkillRow label="Coding req." value={tool.skillCoding} color={tool.skillColor} />
               <div style={{ height: 1, background: 'var(--border)', margin: '10px 0' }} />
-              <button onClick={e => { e.stopPropagation(); setFlipped(true) }} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 600, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>
+              <button onClick={e => { e.stopPropagation(); setFlipped(true) }} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>
                 Pros, cons &amp; pricing →
               </button>
             </div>
@@ -119,7 +119,7 @@ export default function ToolCard({ tool, isExpanded, onToggle }) {
             <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', padding: '14px 16px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
                 <div style={{ fontSize: 14, fontWeight: 500, color: '#1d1d1f' }}>{tool.name}</div>
-                <button onClick={e => { e.stopPropagation(); setFlipped(false) }} style={{ fontSize: 12, fontWeight: 600, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>← Back</button>
+                <button onClick={e => { e.stopPropagation(); setFlipped(false) }} style={{ fontSize: 12, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>← Back</button>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }}>
                 <div>

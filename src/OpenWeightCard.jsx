@@ -1,3 +1,11 @@
+const SPEC_ROWS = [
+  { label: 'Parameters', field: 'paramsDetail' },
+  { label: 'Context',    field: 'context' },
+  { label: 'License',    field: 'licenseDetail' },
+  { label: 'Weights',    field: 'weights' },
+  { label: 'API price',  field: 'apiPrice' },
+]
+
 export default function OpenWeightCard({ model }) {
   return (
     <div style={{
@@ -19,12 +27,12 @@ export default function OpenWeightCard({ model }) {
       </div>
 
       <dl style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', columnGap: 12, rowGap: 6, margin: 0, marginBottom: 14 }}>
-        {model.specs.map(spec => (
-          <div key={spec.label} style={{ display: 'contents' }}>
+        {SPEC_ROWS.map(row => (
+          <div key={row.label} style={{ display: 'contents' }}>
             <dt style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.05em', paddingTop: 2, whiteSpace: 'nowrap' }}>
-              {spec.label}
+              {row.label}
             </dt>
-            <dd style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.45, margin: 0 }}>{spec.value}</dd>
+            <dd style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.45, margin: 0 }}>{model[row.field]}</dd>
           </div>
         ))}
       </dl>
