@@ -28,15 +28,15 @@ function getIconPath(id) {
 
 
 function SL({ children }) {
-  return <div style={{ fontSize: 22, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 12 }}>{children}</div>
+  return <div style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{children}</div>
 }
 
 function SkillRow({ label, value, color }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 12 }}>
-      <span style={{ fontSize: 24, color: '#3a3a3c', width: 160, flexShrink: 0 }}>{label}</span>
-      <div style={{ flex: 1, height: 8, background: 'var(--surface2)', borderRadius: 4, overflow: 'hidden' }}>
-        <div style={{ width: `${value}%`, height: '100%', background: color, borderRadius: 4 }} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+      <span style={{ fontSize: 12, color: '#3a3a3c', width: 80, flexShrink: 0 }}>{label}</span>
+      <div style={{ flex: 1, height: 4, background: 'var(--surface2)', borderRadius: 2, overflow: 'hidden' }}>
+        <div style={{ width: `${value}%`, height: '100%', background: color, borderRadius: 2 }} />
       </div>
     </div>
   )
@@ -44,8 +44,8 @@ function SkillRow({ label, value, color }) {
 
 function DotRow({ color, text }) {
   return (
-    <div style={{ display: 'flex', gap: 12, marginBottom: 10, fontSize: 24, color: '#1d1d1f', lineHeight: 1.4 }}>
-      <span style={{ width: 10, height: 10, borderRadius: '50%', background: color, flexShrink: 0, marginTop: 8 }} />{text}
+    <div style={{ display: 'flex', gap: 6, marginBottom: 5, fontSize: 12, color: '#1d1d1f', lineHeight: 1.4 }}>
+      <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, flexShrink: 0, marginTop: 4 }} />{text}
     </div>
   )
 }
@@ -69,52 +69,52 @@ export default function ToolCard({ tool, isExpanded, onToggle }) {
       cursor: 'pointer',
     }}>
       {/* Compact row */}
-      <div onClick={handleToggle} style={{ padding: '28px 32px', display: 'flex', alignItems: 'center', gap: 20, borderBottom: isExpanded ? '1px solid var(--border)' : 'none' }}>
-        <div style={{ width: 60, height: 60, borderRadius: 14, background: tool.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none">{getIconPath(tool.id)}</svg>
+      <div onClick={handleToggle} style={{ padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 10, borderBottom: isExpanded ? '1px solid var(--border)' : 'none' }}>
+        <div style={{ width: 30, height: 30, borderRadius: 7, background: tool.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">{getIconPath(tool.id)}</svg>
         </div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 30, fontWeight: 500, color: '#1d1d1f', lineHeight: 1.2 }}>{tool.name}</div>
-          <div style={{ fontSize: 24, color: '#3a3a3c', marginTop: 4 }}>{tool.tagline}</div>
+          <div style={{ fontSize: 15, fontWeight: 500, color: '#1d1d1f', lineHeight: 1.2 }}>{tool.name}</div>
+          <div style={{ fontSize: 12, color: '#3a3a3c', marginTop: 2 }}>{tool.tagline}</div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexShrink: 0 }}>
-          <svg width="28" height="28" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.25s', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.25s', transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', flexShrink: 0 }}>
             <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
       </div>
 
       {/* Expanded */}
-      <div style={{ maxHeight: isExpanded ? '840px' : '0px', opacity: isExpanded ? 1 : 0, overflow: 'hidden', transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease' }}>
-        <div style={{ perspective: '2400px', height: 840 }}>
-          <div style={{ position: 'relative', width: '100%', height: 840, transformStyle: 'preserve-3d', transition: 'transform 0.65s cubic-bezier(0.33,1,0.68,1)', transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}>
+      <div style={{ maxHeight: isExpanded ? '420px' : '0px', opacity: isExpanded ? 1 : 0, overflow: 'hidden', transition: 'max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease' }}>
+        <div style={{ perspective: '1200px', height: 420 }}>
+          <div style={{ position: 'relative', width: '100%', height: 420, transformStyle: 'preserve-3d', transition: 'transform 0.65s cubic-bezier(0.33,1,0.68,1)', transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}>
 
             {/* Front */}
-            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', padding: '28px 32px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', padding: '14px 16px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
               <SL>How it works</SL>
-              <p style={{ fontSize: 26, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 24 }}>{tool.howItWorks}</p>
-              <div style={{ height: 2, background: 'var(--border)', margin: '0 0 20px' }} />
+              <p style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 12 }}>{tool.howItWorks}</p>
+              <div style={{ height: 1, background: 'var(--border)', margin: '0 0 10px' }} />
               <SL>Best for</SL>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginBottom: 24 }}>
-                {tool.tags.map(t => <span key={t} style={{ fontSize: 22, fontWeight: 500, padding: '6px 20px', borderRadius: 40, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginBottom: 12 }}>
+                {tool.tags.map(t => <span key={t} style={{ fontSize: 11, fontWeight: 500, padding: '3px 10px', borderRadius: 20, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
               </div>
-              <div style={{ height: 2, background: 'var(--border)', margin: '0 0 20px' }} />
+              <div style={{ height: 1, background: 'var(--border)', margin: '0 0 10px' }} />
               <SL>Skill curve</SL>
               <SkillRow label="Design" value={tool.skillDesign} color={tool.skillColor} />
               <SkillRow label="Coding req." value={tool.skillCoding} color={tool.skillColor} />
-              <div style={{ height: 2, background: 'var(--border)', margin: '20px 0' }} />
-              <button onClick={e => { e.stopPropagation(); setFlipped(true) }} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontSize: 24, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>
+              <div style={{ height: 1, background: 'var(--border)', margin: '10px 0' }} />
+              <button onClick={e => { e.stopPropagation(); setFlipped(true) }} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>
                 Pros, cons &amp; pricing →
               </button>
             </div>
 
             {/* Back */}
-            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', padding: '28px 32px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
-                <div style={{ fontSize: 28, fontWeight: 500, color: '#1d1d1f' }}>{tool.name}</div>
-                <button onClick={e => { e.stopPropagation(); setFlipped(false) }} style={{ fontSize: 24, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>← Back</button>
+            <div style={{ position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', padding: '14px 16px', display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+                <div style={{ fontSize: 14, fontWeight: 500, color: '#1d1d1f' }}>{tool.name}</div>
+                <button onClick={e => { e.stopPropagation(); setFlipped(false) }} style={{ fontSize: 12, fontWeight: 500, color: '#003d8f', background: 'none', border: 'none', cursor: 'pointer', padding: 0, fontFamily: 'var(--font)' }}>← Back</button>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginBottom: 20 }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }}>
                 <div>
                   <SL>Pros</SL>
                   {tool.pros.map((p, i) => <DotRow key={i} color="#1e7e34" text={p} />)}
@@ -124,15 +124,15 @@ export default function ToolCard({ tool, isExpanded, onToggle }) {
                   {tool.cons.map((c, i) => <DotRow key={i} color="#c0392b" text={c} />)}
                 </div>
               </div>
-              <div style={{ height: 2, background: 'var(--border)', margin: '0 0 20px' }} />
+              <div style={{ height: 1, background: 'var(--border)', margin: '0 0 10px' }} />
               <SL>Pricing</SL>
-              <div style={{ marginBottom: 20 }}>
-                <span style={{ fontSize: 24, fontWeight: 500, padding: '8px 24px', borderRadius: 40, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)' }}>{tool.pricing}</span>
+              <div style={{ marginBottom: 10 }}>
+                <span style={{ fontSize: 12, fontWeight: 500, padding: '4px 12px', borderRadius: 20, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)' }}>{tool.pricing}</span>
               </div>
-              <div style={{ height: 2, background: 'var(--border)', margin: '0 0 20px' }} />
+              <div style={{ height: 1, background: 'var(--border)', margin: '0 0 10px' }} />
               <SL>When to use</SL>
               <DotRow color="#1e7e34" text={tool.whenToUse} />
-              <div style={{ marginTop: 16 }}>
+              <div style={{ marginTop: 8 }}>
                 <SL>When to avoid</SL>
                 <DotRow color="#b7600a" text={tool.whenToAvoid} />
               </div>

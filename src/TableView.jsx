@@ -81,13 +81,13 @@ function diffIndicator(skillCoding) {
 }
 
 function SectionLabel({ children, style }) {
-  return <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10, ...style }}>{children}</div>
+  return <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5, ...style }}>{children}</div>
 }
 
 function DotRow({ color, text }) {
   return (
-    <div style={{ display: 'flex', gap: 12, marginBottom: 10, fontSize: 24, color: '#1d1d1f', lineHeight: 1.4 }}>
-      <span style={{ width: 10, height: 10, borderRadius: '50%', background: color, flexShrink: 0, marginTop: 8 }} />{text}
+    <div style={{ display: 'flex', gap: 6, marginBottom: 5, fontSize: 12, color: '#1d1d1f', lineHeight: 1.4 }}>
+      <span style={{ width: 5, height: 5, borderRadius: '50%', background: color, flexShrink: 0, marginTop: 4 }} />{text}
     </div>
   )
 }
@@ -98,44 +98,44 @@ function DetailPanel({ tool, onClose }) {
       background: 'var(--surface)',
       borderTop: '2px solid #007aff',
       borderBottom: '2px solid #007aff',
-      padding: '32px 40px',
+      padding: '16px 20px',
       animation: 'slideDown 0.3s cubic-bezier(0.4,0,0.2,1)',
     }}>
       <style>{`@keyframes slideDown { from { opacity:0; transform:translateY(-6px) } to { opacity:1; transform:translateY(0) } }`}</style>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 40 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr', gap: 20 }}>
         {/* Col 1 — How it works */}
         <div>
-          <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 16, borderBottom: '1px solid var(--border)', marginBottom: 20 }}>How it works</div>
-          <p style={{ fontSize: 26, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 24 }}>{tool.howItWorks}</p>
-          <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>Best for</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {tool.tags.map(t => <span key={t} style={{ fontSize: 22, fontWeight: 500, padding: '6px 18px', borderRadius: 40, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>How it works</div>
+          <p style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.65, marginBottom: 12 }}>{tool.howItWorks}</p>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Best for</div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
+            {tool.tags.map(t => <span key={t} style={{ fontSize: 11, fontWeight: 500, padding: '3px 9px', borderRadius: 20, background: tool.tagColor.bg, color: tool.tagColor.text }}>{t}</span>)}
           </div>
         </div>
 
         {/* Col 2 — Pros & cons */}
         <div>
-          <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 16, borderBottom: '1px solid var(--border)', marginBottom: 20 }}>Pros &amp; cons</div>
-          <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>Pros</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>Pros &amp; cons</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Pros</div>
           {tool.pros.map((p, i) => <DotRow key={i} color="#1e7e34" text={p} />)}
-          <div style={{ marginTop: 16 }}>
-            <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>Cons</div>
+          <div style={{ marginTop: 8 }}>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>Cons</div>
             {tool.cons.map((c, i) => <DotRow key={i} color="#c0392b" text={c} />)}
           </div>
         </div>
 
         {/* Col 3 — Pricing + close button inline with header */}
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 16, borderBottom: '1px solid var(--border)', marginBottom: 20 }}>
-            <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
-            <button onClick={onClose} style={{ fontSize: 22, fontWeight: 500, color: '#1d1d1f', cursor: 'pointer', background: 'none', border: '1px solid #6e6e73', borderRadius: 12, padding: '6px 18px', fontFamily: 'var(--font)', lineHeight: 1 }}>✕ Close</button>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: 8, borderBottom: '1px solid var(--border)', marginBottom: 10 }}>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em' }}>Pricing</div>
+            <button onClick={onClose} style={{ fontSize: 11, fontWeight: 500, color: '#1d1d1f', cursor: 'pointer', background: 'none', border: '1px solid #6e6e73', borderRadius: 6, padding: '3px 9px', fontFamily: 'var(--font)', lineHeight: 1 }}>✕ Close</button>
           </div>
-          <div style={{ fontSize: 24, fontWeight: 500, padding: '8px 24px', borderRadius: 40, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)', display: 'inline-block', marginBottom: 24 }}>{tool.pricing}</div>
-          <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>When to use</div>
+          <div style={{ fontSize: 12, fontWeight: 500, padding: '4px 12px', borderRadius: 20, background: '#e8f0fe', color: '#003d8f', border: '1px solid rgba(0,61,143,0.2)', display: 'inline-block', marginBottom: 12 }}>{tool.pricing}</div>
+          <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to use</div>
           <DotRow color="#1e7e34" text={tool.whenToUse} />
-          <div style={{ marginTop: 16 }}>
-            <div style={{ fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>When to avoid</div>
+          <div style={{ marginTop: 8 }}>
+            <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>When to avoid</div>
             <DotRow color="#b7600a" text={tool.whenToAvoid} />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function TableView({ lanes, tools }) {
         <thead>
           <tr style={{ background: 'var(--surface2)' }}>
             {['Tool', 'Type', 'Pricing', 'Coding req.', 'Company', ''].map((h, i) => (
-              <th key={i} style={{ padding: '20px 28px', fontSize: 20, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
+              <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -178,9 +178,9 @@ export default function TableView({ lanes, tools }) {
               return [
                 isFirst && (
                   <tr key={`cat-${lane.id}`}>
-                    <td colSpan={6} style={{ padding: '14px 28px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                        <span style={{ fontSize: 20, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lane.label}</span>
+                    <td colSpan={6} style={{ padding: '7px 14px', background: 'var(--surface2)', borderBottom: '1px solid var(--border)', borderTop: '1px solid var(--border)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <span style={{ fontSize: 10, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{lane.label}</span>
                       </div>
                     </td>
                   </tr>
@@ -192,32 +192,32 @@ export default function TableView({ lanes, tools }) {
                   onMouseEnter={e => { if (!isActive) e.currentTarget.style.background = 'var(--surface2)' }}
                   onMouseLeave={e => { if (!isActive) e.currentTarget.style.background = 'var(--surface)' }}
                 >
-                  <td style={{ padding: '22px 28px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                      <div style={{ width: 48, height: 48, borderRadius: 12, background: tool.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">{getIconPath(tool.id)}</svg>
+                  <td style={{ padding: '11px 14px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <div style={{ width: 24, height: 24, borderRadius: 6, background: tool.iconBg, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none">{getIconPath(tool.id)}</svg>
                       </div>
                       <div style={{ minWidth: 0 }}>
-                        <div style={{ fontSize: 26, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tool.name}</div>
-                        <div style={{ fontSize: 22, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 2 }}>{tool.tagline}</div>
+                        <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{tool.name}</div>
+                        <div style={{ fontSize: 11, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 1 }}>{tool.tagline}</div>
                       </div>
                     </div>
                   </td>
-                  <td style={{ padding: '22px 28px', fontSize: 24, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 26 }}>{TYPES[tool.id] || '—'}</td>
-                  <td style={{ padding: '22px 28px', verticalAlign: 'top', paddingTop: 26 }}>
-                    <span style={{ fontSize: 22, fontWeight: 500, padding: '4px 16px', borderRadius: 40, background: pl.free ? '#e8faf4' : '#f1efe8', color: pl.free ? '#0a6b4a' : '#444441', whiteSpace: 'nowrap' }}>{pl.label}</span>
+                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{TYPES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
+                    <span style={{ fontSize: 11, fontWeight: 500, padding: '2px 8px', borderRadius: 20, background: pl.free ? '#e8faf4' : '#f1efe8', color: pl.free ? '#0a6b4a' : '#444441', whiteSpace: 'nowrap' }}>{pl.label}</span>
                   </td>
-                  <td style={{ padding: '22px 28px', verticalAlign: 'top', paddingTop: 26 }}>
+                  <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                     {diff ? (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        <div style={{ width: 16, height: 16, borderRadius: '50%', background: diff.color, flexShrink: 0 }} />
-                        <span style={{ fontSize: 24, color: '#1d1d1f' }}>{diff.label}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+                        <div style={{ width: 8, height: 8, borderRadius: '50%', background: diff.color, flexShrink: 0 }} />
+                        <span style={{ fontSize: 12, color: '#1d1d1f' }}>{diff.label}</span>
                       </div>
-                    ) : <span style={{ fontSize: 24, color: '#3a3a3c' }}>—</span>}
+                    ) : <span style={{ fontSize: 12, color: '#3a3a3c' }}>—</span>}
                   </td>
-                  <td style={{ padding: '22px 28px', fontSize: 24, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 26 }}>{COMPANIES[tool.id] || '—'}</td>
-                  <td style={{ padding: '22px 28px', textAlign: 'center', verticalAlign: 'top', paddingTop: 28 }}>
-                    <svg width="24" height="24" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.2s', transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                  <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{COMPANIES[tool.id] || '—'}</td>
+                  <td style={{ padding: '11px 14px', textAlign: 'center', verticalAlign: 'top', paddingTop: 14 }}>
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" style={{ transition: 'transform 0.2s', transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)' }}>
                       <path d="M2.5 5L7 9.5L11.5 5" stroke="#3a3a3c" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </td>
