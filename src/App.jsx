@@ -30,16 +30,16 @@ export default function App() {
 
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg)' }}>
-      <header style={{ background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 10, padding: '0 24px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-            <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & open models</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 13 2026</span>
+      <header style={{ background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 10, padding: '0 48px' }}>
+        <div style={{ maxWidth: 2200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 32, height: 112 }}>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 20, minWidth: 0, overflow: 'hidden' }}>
+            <span style={{ fontSize: 34, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>Vibe Coding Dashboard</span>
+            <span style={{ fontSize: 26, color: '#3a3a3c', whiteSpace: 'nowrap' }}>Tool comparison & open models</span>
+            <span style={{ fontSize: 26, color: '#3a3a3c', whiteSpace: 'nowrap' }}>Updated August 13 2026</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontSize: 12, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
-            <div style={{ display: 'flex', background: 'var(--surface2)', borderRadius: 8, padding: 3, gap: 2 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexShrink: 0 }}>
+            <span style={{ fontSize: 24, color: '#3a3a3c', fontFamily: 'var(--mono)', whiteSpace: 'nowrap' }}>{tools.length} tools</span>
+            <div style={{ display: 'flex', background: 'var(--surface2)', borderRadius: 16, padding: 6, gap: 4 }}>
               <ViewBtn label="Table" icon="table" active={view === 'table'} onClick={() => setView('table')} />
               <ViewBtn label="Cards" icon="cards" active={view === 'cards'} onClick={() => setView('cards')} />
             </div>
@@ -47,10 +47,10 @@ export default function App() {
         </div>
       </header>
 
-      <main style={{ maxWidth: 1100, margin: '0 auto', padding: '28px 24px 60px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+      <main style={{ maxWidth: 2200, margin: '0 auto', padding: '56px 48px 120px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32 }}>
           <SectionHeading>Tools</SectionHeading>
-          <span style={{ fontSize: 12, color: '#3a3a3c' }}>
+          <span style={{ fontSize: 24, color: '#3a3a3c' }}>
             {view === 'table' ? 'Click any row to expand detail' : 'Click any card to expand'}
           </span>
         </div>
@@ -69,7 +69,7 @@ export default function App() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, textAlign: 'center', fontSize: 12, color: '#3a3a3c' }}>
+        <div style={{ marginTop: 80, textAlign: 'center', fontSize: 24, color: '#3a3a3c' }}>
           Last updated August 2026 · Built with React + Vite + Vercel
         </div>
       </main>
@@ -82,9 +82,9 @@ function ViewBtn({ label, icon, active, onClick }) {
     <button
       onClick={onClick}
       style={{
-        display: 'flex', alignItems: 'center', gap: 5,
-        fontSize: 12, fontWeight: 500,
-        padding: '5px 10px', borderRadius: 6,
+        display: 'flex', alignItems: 'center', gap: 10,
+        fontSize: 24, fontWeight: 500,
+        padding: '10px 20px', borderRadius: 12,
         border: 'none', cursor: 'pointer',
         fontFamily: 'var(--font)',
         background: active ? 'var(--surface)' : 'transparent',
@@ -94,12 +94,12 @@ function ViewBtn({ label, icon, active, onClick }) {
       }}
     >
       {icon === 'table' ? (
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+        <svg width="26" height="26" viewBox="0 0 14 14" fill="none">
           <rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.2"/>
           <path d="M1 5h12M5 5v8" stroke="currentColor" strokeWidth="1.2"/>
         </svg>
       ) : (
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+        <svg width="26" height="26" viewBox="0 0 14 14" fill="none">
           <rect x="1" y="1" width="5" height="5" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
           <rect x="8" y="1" width="5" height="5" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
           <rect x="1" y="8" width="5" height="5" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
@@ -113,20 +113,20 @@ function ViewBtn({ label, icon, active, onClick }) {
 
 function OpenWeightSection({ view }) {
   return (
-    <div style={{ margin: '28px 0 32px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
+    <div style={{ margin: '56px 0 64px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, marginBottom: 16 }}>
         <SectionHeading>Top open-weight models</SectionHeading>
-        <span style={{ fontSize: 12, color: '#3a3a3c' }}>
+        <span style={{ fontSize: 24, color: '#3a3a3c' }}>
           {view === 'table' ? 'Click any row to expand detail' : 'Full detail on each card'}
         </span>
       </div>
-      <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
+      <div style={{ fontSize: 26, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 1560, marginBottom: 32 }}>
         {openWeightNote}
       </div>
       {view === 'table' ? (
         <OpenWeightTable models={openWeightModels} />
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 14, alignItems: 'stretch' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(600px, 1fr))', gap: 28, alignItems: 'stretch' }}>
           {openWeightModels.map(m => <OpenWeightCard key={m.id} model={m} />)}
         </div>
       )}
@@ -138,11 +138,10 @@ function renderLaneCards(lane, expandedIds, toggle) {
   const laneTools = lane.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
   return (
     <div key={lane.id} style={{ marginBottom: '2rem' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-        <span style={{ fontSize: 11, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
-        <div style={{ height: 2, borderRadius: 2, flex: 1, background: lane.stripe }} />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 24, marginBottom: 24 }}>
+        <span style={{ fontSize: 22, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(560px, 1fr))', gap: 20 }}>
         {laneTools.map(tool => (
           <ToolCard key={tool.id} tool={tool} isExpanded={expandedIds.has(tool.id)} onToggle={() => toggle(tool.id)} />
         ))}
@@ -152,5 +151,5 @@ function renderLaneCards(lane, expandedIds, toggle) {
 }
 
 function SectionHeading({ children }) {
-  return <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{children}</div>
+  return <div style={{ fontSize: 26, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{children}</div>
 }
