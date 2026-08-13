@@ -21,7 +21,7 @@ export default function OpenWeightTable({ models }) {
         <thead>
           <tr style={{ background: 'var(--surface2)' }}>
             {HEADS.map((h, i) => (
-              <th key={i} style={{ padding: '10px 14px', fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
+              <th key={i} style={{ padding: '10px 14px', fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.07em', textAlign: 'left', borderBottom: '1px solid var(--border)' }}>{h}</th>
             ))}
           </tr>
         </thead>
@@ -42,38 +42,38 @@ export default function OpenWeightTable({ models }) {
                       <div style={{ width: 9, height: 9, borderRadius: 3, background: model.accent }} />
                     </div>
                     <div style={{ minWidth: 0 }}>
-                      <div style={{ fontSize: 16, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{model.name}</div>
-                      <div style={{ fontSize: 14, color: model.accent, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 1 }}>{model.rank}</div>
+                      <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{model.name}</div>
+                      <div style={{ fontSize: 11, color: model.accent, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', marginTop: 1 }}>{model.rank}</div>
                     </div>
                   </div>
                 </td>
-                <td style={{ padding: '11px 14px', fontSize: 15, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.maker}</td>
-                <td style={{ padding: '11px 14px', fontSize: 15, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.params}</td>
-                <td style={{ padding: '11px 14px', fontSize: 15, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.context}</td>
+                <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.maker}</td>
+                <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.params}</td>
+                <td style={{ padding: '11px 14px', fontSize: 12, color: '#1d1d1f', verticalAlign: 'top', paddingTop: 13 }}>{model.context}</td>
                 <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
-                  <span style={{ fontSize: 14, fontWeight: 500, padding: '2px 8px', borderRadius: 20, whiteSpace: 'nowrap', background: model.licenseOpen ? '#e8faf4' : '#f1efe8', color: model.licenseOpen ? '#0a6b4a' : '#444441' }}>{model.license}</span>
+                  <span style={{ fontSize: 11, fontWeight: 500, padding: '2px 8px', borderRadius: 20, whiteSpace: 'nowrap', background: model.licenseOpen ? '#e8faf4' : '#f1efe8', color: model.licenseOpen ? '#0a6b4a' : '#444441' }}>{model.license}</span>
                 </td>
                 <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13 }}>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
-                    <span style={{ fontSize: 15, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{model.headline.value}</span>
-                    <span style={{ fontSize: 14, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{model.headline.label}</span>
+                    <span style={{ fontSize: 12, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{model.headline.value}</span>
+                    <span style={{ fontSize: 11, color: '#3a3a3c', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{model.headline.label}</span>
                   </div>
                 </td>
                 <td style={{ padding: '11px 14px', verticalAlign: 'top', paddingTop: 13, textAlign: 'right' }}>
-                  <span style={{ fontSize: 14, color: '#3a3a3c', display: 'inline-block', transform: isActive ? 'rotate(90deg)' : 'none', transition: 'transform 0.15s' }}>›</span>
+                  <span style={{ fontSize: 11, color: '#3a3a3c', display: 'inline-block', transform: isActive ? 'rotate(90deg)' : 'none', transition: 'transform 0.15s' }}>›</span>
                 </td>
               </tr>,
               isActive && (
                 <tr key={`${model.id}-detail`}>
                   <td colSpan={7} style={{ padding: '16px 18px 18px', background: '#fafafc', borderBottom: '1px solid var(--border)', animation: 'slideDown 0.3s cubic-bezier(0.4,0,0.2,1)' }}>
                     <style>{`@keyframes slideDown { from { opacity:0; transform:translateY(-6px) } to { opacity:1; transform:translateY(0) } }`}</style>
-                    <div style={{ fontSize: 16, color: '#1d1d1f', lineHeight: 1.5, marginBottom: 14 }}>{model.tagline}</div>
+                    <div style={{ fontSize: 13, color: '#1d1d1f', lineHeight: 1.5, marginBottom: 14 }}>{model.tagline}</div>
 
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 14 }}>
                       {model.benchmarks.map(b => (
                         <div key={b.label} style={{ background: model.accentBg, borderRadius: 8, padding: '5px 9px', display: 'flex', alignItems: 'baseline', gap: 6 }}>
-                          <span style={{ fontSize: 13, color: '#3a3a3c' }}>{b.label}</span>
-                          <span style={{ fontSize: 15, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{b.value}</span>
+                          <span style={{ fontSize: 10, color: '#3a3a3c' }}>{b.label}</span>
+                          <span style={{ fontSize: 12, fontWeight: 500, color: model.accent, fontFamily: 'var(--mono)' }}>{b.value}</span>
                         </div>
                       ))}
                     </div>
@@ -102,8 +102,8 @@ export default function OpenWeightTable({ models }) {
 function Block({ label, children }) {
   return (
     <div>
-      <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>{label}</div>
-      <div style={{ fontSize: 15, color: '#1d1d1f', lineHeight: 1.5 }}>{children}</div>
+      <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 5 }}>{label}</div>
+      <div style={{ fontSize: 12, color: '#1d1d1f', lineHeight: 1.5 }}>{children}</div>
     </div>
   )
 }
@@ -111,8 +111,8 @@ function Block({ label, children }) {
 function Inline({ label, children }) {
   return (
     <div>
-      <div style={{ fontSize: 13, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 3 }}>{label}</div>
-      <div style={{ fontSize: 15, color: '#1d1d1f' }}>{children}</div>
+      <div style={{ fontSize: 10, fontWeight: 500, color: '#3a3a3c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 3 }}>{label}</div>
+      <div style={{ fontSize: 12, color: '#1d1d1f' }}>{children}</div>
     </div>
   )
 }

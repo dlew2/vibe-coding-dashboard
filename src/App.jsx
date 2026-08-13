@@ -33,12 +33,12 @@ export default function App() {
       <header style={{ background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 10, padding: '0 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-            <span style={{ fontSize: 21, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
-            <span style={{ fontSize: 16, color: '#3a3a3c' }}>Tool comparison & open models</span>
-            <span style={{ fontSize: 16, color: '#3a3a3c' }}>Updated August 13 2026</span>
+            <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & open models</span>
+            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 13 2026</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontSize: 15, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
+            <span style={{ fontSize: 12, color: '#3a3a3c', fontFamily: 'var(--mono)' }}>{tools.length} tools</span>
             <div style={{ display: 'flex', background: 'var(--surface2)', borderRadius: 8, padding: 3, gap: 2 }}>
               <ViewBtn label="Table" icon="table" active={view === 'table'} onClick={() => setView('table')} />
               <ViewBtn label="Cards" icon="cards" active={view === 'cards'} onClick={() => setView('cards')} />
@@ -50,7 +50,7 @@ export default function App() {
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: '28px 24px 60px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
           <SectionHeading>Tools</SectionHeading>
-          <span style={{ fontSize: 15, color: '#3a3a3c' }}>
+          <span style={{ fontSize: 12, color: '#3a3a3c' }}>
             {view === 'table' ? 'Click any row to expand detail' : 'Click any card to expand'}
           </span>
         </div>
@@ -69,7 +69,7 @@ export default function App() {
           </div>
         )}
 
-        <div style={{ marginTop: 40, textAlign: 'center', fontSize: 15, color: '#3a3a3c' }}>
+        <div style={{ marginTop: 40, textAlign: 'center', fontSize: 12, color: '#3a3a3c' }}>
           Last updated August 2026 · Built with React + Vite + Vercel
         </div>
       </main>
@@ -83,7 +83,7 @@ function ViewBtn({ label, icon, active, onClick }) {
       onClick={onClick}
       style={{
         display: 'flex', alignItems: 'center', gap: 5,
-        fontSize: 15, fontWeight: 500,
+        fontSize: 12, fontWeight: 500,
         padding: '5px 10px', borderRadius: 6,
         border: 'none', cursor: 'pointer',
         fontFamily: 'var(--font)',
@@ -116,17 +116,17 @@ function OpenWeightSection({ view, expandedIds, toggle }) {
     <div style={{ margin: '28px 0 32px' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
         <SectionHeading>Top open-weight models</SectionHeading>
-        <span style={{ fontSize: 15, color: '#3a3a3c' }}>
+        <span style={{ fontSize: 12, color: '#3a3a3c' }}>
           {view === 'table' ? 'Click any row to expand detail' : 'Click any card to expand'}
         </span>
       </div>
-      <div style={{ fontSize: 16, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
+      <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
         {openWeightNote}
       </div>
       {view === 'table' ? (
         <OpenWeightTable models={openWeightModels} />
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: 14, alignItems: 'start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 14, alignItems: 'start' }}>
           {openWeightModels.map(m => (
             <OpenWeightCard key={m.id} model={m} isExpanded={expandedIds.has(m.id)} onToggle={() => toggle(m.id)} />
           ))}
@@ -141,9 +141,9 @@ function renderLaneCards(lane, expandedIds, toggle) {
   return (
     <div key={lane.id} style={{ marginBottom: '2rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-        <span style={{ fontSize: 14, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
+        <span style={{ fontSize: 11, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.07em', whiteSpace: 'nowrap' }}>{lane.label}</span>
       </div>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 10 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 10, alignItems: 'start' }}>
         {laneTools.map(tool => (
           <ToolCard key={tool.id} tool={tool} isExpanded={expandedIds.has(tool.id)} onToggle={() => toggle(tool.id)} />
         ))}
@@ -153,5 +153,5 @@ function renderLaneCards(lane, expandedIds, toggle) {
 }
 
 function SectionHeading({ children }) {
-  return <div style={{ fontSize: 16, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{children}</div>
+  return <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{children}</div>
 }
