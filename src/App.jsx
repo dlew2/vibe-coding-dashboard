@@ -114,11 +114,8 @@ function ViewBtn({ label, icon, active, onClick }) {
 function OpenWeightSection({ view, expandedIds, toggle }) {
   return (
     <div style={{ margin: '28px 0 32px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, marginBottom: 8 }}>
+      <div style={{ marginBottom: 8 }}>
         <SectionHeading>Top open-weight models</SectionHeading>
-        <span style={{ fontSize: 12, color: '#3a3a3c' }}>
-          {view === 'table' ? 'Click any row to expand detail' : 'Click any card to expand'}
-        </span>
       </div>
       <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
         {openWeightNote}
