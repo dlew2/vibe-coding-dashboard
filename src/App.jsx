@@ -117,7 +117,7 @@ function OpenWeightSection({ view, expandedIds, toggle }) {
       <div style={{ marginBottom: 8 }}>
         <SectionHeading>Top open-weight models</SectionHeading>
       </div>
-      <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, maxWidth: 780, marginBottom: 16 }}>
+      <div style={{ fontSize: 13, color: '#3a3a3c', lineHeight: 1.55, marginBottom: 16 }}>
         {openWeightNote}
       </div>
       {view === 'table' ? (
