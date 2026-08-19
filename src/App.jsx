@@ -33,8 +33,8 @@ export default function App() {
       <header style={{ background: 'rgba(255,255,255,0.88)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 10, padding: '0 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-            <span style={{ fontSize: 17, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
-            <span style={{ fontSize: 13, color: '#3a3a3c' }}>Tool comparison & open models</span>
+            <span style={{ fontSize: 22, fontWeight: 500, color: 'var(--text-primary)', letterSpacing: '-0.01em' }}>Vibe Coding Dashboard</span>
+            <span style={{ fontSize: 16, color: '#3a3a3c' }}>Tool comparison & open models</span>
             <span style={{ fontSize: 13, color: '#3a3a3c' }}>Updated August 13 2026</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
