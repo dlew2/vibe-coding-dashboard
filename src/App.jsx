@@ -76,8 +76,8 @@ export default function App() {
     <div className="kit">
       <header className="kit-top">
         <div>
-          <div className="mono">tool comparison &amp; open models · updated {UPDATED}</div>
-          <h1 className="kit-model">Vibe Coding Dashboard</h1>
+          <h1 className="kit-model">AI Bazaar</h1>
+          <div className="mono kicker">tools &amp; open models for building with AI · updated {UPDATED}</div>
         </div>
         <div className="dials" role="img" aria-label="Color key: blue is code, green is build, aqua is design, orange is ship">
           {KEYS.map(k => (

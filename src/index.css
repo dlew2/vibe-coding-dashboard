@@ -43,7 +43,7 @@ button { font: inherit; color: inherit; }
 
 /* ---------- header ---------- */
 .kit-top { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; border-bottom: 1.5px solid var(--ink); padding-bottom: 14px; }
-.kit-model { font-weight: 700; font-size: 37px; line-height: 1; letter-spacing: -.03em; margin-top: 8px; }
+.kit-model { font-weight: 700; font-size: 37px; line-height: 1; letter-spacing: -.03em; }
 
 /* knobs */
 .knob { width: 30px; height: 30px; border-radius: 50%; position: relative; display: block;
@@ -222,3 +222,4 @@ button { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+.kicker { text-transform: none; margin-top: 8px; }
